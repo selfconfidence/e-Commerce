@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.086" errors="0" skipped="0" tests="1" name="com.DemoTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="G:\develop\JDK\jre\bin"/>
+    <property name="java.vm.version" value="24.45-b08"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="G:\develop\Eclipse\pinyougou\pinyougou-parent\pinyougou-sellergoods-service"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="G:\develop\Eclipse\pinyougou\pinyougou-parent\pinyougou-sellergoods-service"/>
+    <property name="java.runtime.version" value="1.7.0_45-b18"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="G:\develop\JDK\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\asus\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 8"/>
+    <property name="maven.ext.class.path" value="/G:/develop/Eclipse/Sts/sts-3.7.1.RELEASE/configuration/org.eclipse.osgi/24/0/.cp/;/G:/develop/Eclipse/Sts/sts-3.7.1.RELEASE/configuration/org.eclipse.osgi/11/0/.cp/"/>
+    <property name="classworlds.conf" value="G:\develop\Eclipse\pinyougou\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2442415406065186958.tmp"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="G:\develop\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;G:/Java1.8/jdk1.8.0_60/bin/../jre/bin/server;G:/Java1.8/jdk1.8.0_60/bin/../jre/bin;G:/Java1.8/jdk1.8.0_60/bin/../jre/lib/amd64;G:\Java1.8\jdk1.8.0_60\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;G:\develop\Myspl\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Program Files (x86)\VanDyke Software\Clients\;G:\SVN\SubVersion\bin;G:\SVN\client-side\bin;G:\maven\apache-maven-3.5.4\bin;D:\python\Scripts\;D:\python\;C:\Users\asus\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\VanDyke Software\Clients\;G:\develop\Eclipse\Sts\sts-3.7.1.RELEASE;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.2"/>
+    <property name="user.home" value="C:\Users\asus"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="m2e.buildListener.launchId" value="6d663f74-eb51-4b59-9a69-1c3b25bcae63"/>
+    <property name="user.name" value="asus"/>
+    <property name="java.class.path" value="G:\maven\apache-maven-3.5.4\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="G:\develop\JDK\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -s G:\maven\apache-maven-3.5.4\conf\settings.xml install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_45"/>
+    <property name="java.ext.dirs" value="G:\develop\JDK\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="G:\develop\JDK\jre\lib\resources.jar;G:\develop\JDK\jre\lib\rt.jar;G:\develop\JDK\jre\lib\sunrsasign.jar;G:\develop\JDK\jre\lib\jsse.jar;G:\develop\JDK\jre\lib\jce.jar;G:\develop\JDK\jre\lib\charsets.jar;G:\develop\JDK\jre\lib\jfr.jar;G:\develop\JDK\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="G:\maven\apache-maven-3.5.4"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="m2e.buildListener.port" value="52398"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="0.086" classname="com.DemoTest" name="demo"/>
+</testsuite>

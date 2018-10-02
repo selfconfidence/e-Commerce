@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+	<!-- 以下页面不被拦截 -->
+	<http pattern="/*.html" security="none"></http>
+	<http pattern="/css/**" security="none"></http>
+	<http pattern="/img/**" security="none"></http>
+	<http pattern="/js/**" security="none"></http>
+	<http pattern="/plugins/**" security="none"></http>
+	<!-- 技巧点:  商家就算没有登陆但是也需要注册 但是注册就需要提交后台进行审核 
+	   所以再次基础上不能进行拦截操作
+	 -->
+	<http pattern="/seller/add.do" security="none"></http>
+	
+	<!-- 页面拦截规则 -->
+	<http use-expressions="false">
+		<intercept-url pattern="/**" access="ROLE_SELLERLOGIN" />
+		<form-login login-page="/shoplogin.html"  default-target-url="/admin/index.html" authentication-failure-url="/shoplogin.html" always-use-default-target="true"/>	
+		<csrf disabled="true"/>
+		<headers>
+			<frame-options policy="SAMEORIGIN"/>
+		</headers>
+		<logout/><!-- 加入此配置就会退出登陆 默认地址就是  根目录下的/logout   也可指定退出之后默认回到的页面操作等. -->
+	</http>
+	
+    <!-- 配置密码匹配方式      calss就是加密的Bcrypt的全类名--> 
+    <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></beans:bean>
+	<!-- 认证管理器 -->
+	<authentication-manager>
+		<authentication-provider user-service-ref="sellerLogin"><!-- 不在使用死数据的方式进行配置使用bean的灵活数据的配置信息进行操作 -->
+   <password-encoder ref="bcryptEncoder"></password-encoder>
+   
+		</authentication-provider>	
+	</authentication-manager>
+		 <beans:bean id="sellerLogin" class="com.pinyougou.userlogin.service.UserDetailsServiceImpl">
+		 <!-- 由于需要使用到独立运行的service  所以还需要引用 dubbo 的基本基设置进行注入操作 -->
+		           <beans:property name="sellerService" ref="sellerService"></beans:property>
+		 </beans:bean>
+		 <!-- 需要使用到dubbo的服务获取service才可以 -->
+		<dubbo:application name="pinyougou-shop-web" />
+	<dubbo:registry address="zookeeper://192.168.25.135:2181"/> 
+	
+	<!-- 指定获取的接口 dubbo会填充此实现类Impl -->
+	<dubbo:reference interface=" com.pinyougou.sellergoods.service.SellerService" id="sellerService"></dubbo:reference>
+</beans:beans>

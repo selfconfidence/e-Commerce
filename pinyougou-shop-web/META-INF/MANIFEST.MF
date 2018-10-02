@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: pinyougou-shop-web
+Bundle-SymbolicName: pinyougou-shop-web
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.pinyougou.shop.controller,
+ com.pinyougou.userlogin.service

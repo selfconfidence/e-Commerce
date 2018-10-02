@@ -1,0 +1,34 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/data/mongo
+          http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+        <context:property-placeholder location="classpath:mongo.properties"/>
+	
+	<!--连接池配置 -->
+	<mongo:mongo host="${mongo.host}" port="${mongo.port}">
+		<mongo:options connections-per-host="${mongo.options.connections-per-host}"
+			threads-allowed-to-block-for-connection-multiplier="${mongo.options.threads-allowed-to-block-for-connection-multiplier}"
+			connect-timeout="${mongo.options.connect-timeout}" max-wait-time="${mongo.options.max-wait-time}"
+			auto-connect-retry="${mongo.options.auto-connect-retry}"
+			socket-keep-alive="${mongo.options.socket-keep-alive}"
+			socket-timeout="${mongo.options.socket-timeout}" slave-ok="${mongo.options.slave-ok}"
+			write-number="${mongo.options.write-number}" write-timeout="${mongo.options.write-timeout}"
+			write-fsync="${mongo.options.write-fsync}" />
+	</mongo:mongo>
+	<!--连接池工厂配置 -->
+	<mongo:db-factory dbname="${mongo.dbname}" 
+		mongo-ref="mongo" />
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+	</bean>
+	<!--实体映射自动扫描注入的包 -->
+	<mongo:mapping-converter>
+		<mongo:custom-converters base-package="com.out.demo.MongoEntity" />
+	</mongo:mapping-converter>
+	</beans>
+

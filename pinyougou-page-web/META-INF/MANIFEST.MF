@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: pinyougou-page-web
+Bundle-SymbolicName: pinyougou-page-web
+Bundle-Version: 1.0.0.qualifier
